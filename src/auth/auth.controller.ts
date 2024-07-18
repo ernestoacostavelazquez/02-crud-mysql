@@ -31,6 +31,7 @@ export class AuthController {
     @UseGuards(AuthGuard)
     profile(){
             return 'profile';
+            
         }
     
 }
