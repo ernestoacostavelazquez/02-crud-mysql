@@ -1,5 +1,5 @@
 import { Cat } from "src/cats/entities/cat.entity";
-import { Column, Entity, OneToMany } from "typeorm";
+import { Column, DeleteDateColumn, Entity, OneToMany } from "typeorm";
 
 @Entity()
 export class Breed {
@@ -9,6 +9,9 @@ export class Breed {
 
     @Column({length:500})
     name:string;
+
+    @DeleteDateColumn()
+    deletedAt: Date;
 
     @OneToMany(() =>Cat, (cat) => cat.breed)
     cats:Cat[];
